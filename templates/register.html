@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="static\bootstrap-5.3.2-dist\bootstrap-5.3.2-dist\css\bootstrap.min.css">
+        <link rel="stylesheet" href="static\bootstrap-5.3.2-dist\bootstrap-5.3.2-dist\css\index.css">
+        <link href="static\bootstrap-5.3.2-dist\bootstrap-5.3.2-dist\js\bootstrap.min.js">
+        <link>
+    </head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card my-5">
+                    <h1 class="card-title text-center">Register</h1>
+                    <form class="card-body cardbody-color p-lg-5" method="post" autocomplete="off">
+                        <div class="mb-3">
+                            <label for="username">Username</label>
+                            <input class="form-control border border-dark border-2" type="text" id="usename" name="username" placeholder="username" required><br>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password">Password</label>
+                            <input class="form-control border border-dark border-2" type="password" id="password" name="password" required><br>
+                        </div>
+                        <div class="mb-3">
+                            <label for="firstName">First Name</label>
+                            <input class="form-control border border-dark border-2" type="text" id="firstName" name="firstName" value="{{ firstName }}" required><br>
+                        </div>
+                        <div class="mb-3">
+                            <label for="lastName">Last Name</label>
+                            <input class="form-control border border-dark border-2" type="text" id="lastName" name="lastName" value="{{ lastName }}" required><br>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone">Phone number</label>
+                            <input class="form-control border border-dark border-2" type="tel" id="phone" name="phone" placeholder="(111) 111-1111" required><br>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email">Email</label>
+                            <input class="form-control border border-dark border-2" type="email" id="email" name="email" placeholder="example@something.com" value="{{ email }}" required><br>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-block text-center">Submit</button>
+                        </div>
+                        <br>
+                        <p class="text-center hr-lines">or</p>
+                        <br>
+                        <div class="d-grid">
+                            <input type="hidden" name="csrf_token" value = "{{ csrf_token() }}" />
+                            <button type="submit" class="btn btn-primary btn-block text-center" value="Login">Sign Up with Email</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

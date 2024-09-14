@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static\bootstrap-5.3.2-dist\bootstrap-5.3.2-dist\css\bootstrap.min.css">
+    <link rel="stylesheet" href="static\bootstrap-5.3.2-dist\bootstrap-5.3.2-dist\css\index.css">
+    <script href="static\bootstrap-5.3.2-dist\bootstrap-5.3.2-dist\js\bootstrap.min.js"></script>
+    <title>Home</title>
+
+    <style>
+        /* Adjust the width of the search bar as needed */
+        .search-bar {
+            max-width: 500px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6 offset-md-3">
+                <form action="?" class="card-body cardbody-color p-lg-5" method="post" autocomplete="off">
+                    <div class="mb-3">
+                        <label for="export">Export</label>
+                        <input type="hidden" name="csrf_token" value = "{{ csrf_token() }}" />
+                        <button class="btn btn-primary btn-block text-center"></button><br>
+                    </div>
+                    <h1 class="msg">{{ msg }}!</h1>
+                    <a href="{{ url_for('logout') }}">Logout</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

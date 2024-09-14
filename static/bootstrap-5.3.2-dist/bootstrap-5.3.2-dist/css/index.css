@@ -1,0 +1,28 @@
+.hr-lines{
+    position: relative;
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .hr-lines:before{
+    content:"";
+    height: 2px;
+    width: 120px;
+    background: red;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 115px;
+  }
+  
+  .hr-lines:after{
+    content:"";
+    height: 2px;
+    width: 120px;
+    background: red;
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 115px;
+  }

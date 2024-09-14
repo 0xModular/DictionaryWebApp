@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Phone Verification</title>
+        <link rel="stylesheet" href="static\bootstrap-5.3.2-dist\bootstrap-5.3.2-dist\css\bootstrap.min.css">
+        <link rel="stylesheet" href="static\bootstrap-5.3.2-dist\bootstrap-5.3.2-dist\css\index.css">
+        <script src="static\bootstrap-5.3.2-dist\bootstrap-5.3.2-dist\js\bootstrap.min.js"></script>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    </head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                {% if msg %}
+                    <h1 class="text-center">{{msg}}</h1>
+                {% endif %}
+                <div class="card my-5">
+                    <h1 class="card-title text-center">Phone Verification</h1>
+                    <form action="{{ url_for('verify_phone') }}" class="card-body cardbody-color p-lg-5" method="post">
+                        <div class="mb-3">
+                            <label for="phone_number">Phone Number</label>
+                            <input class="form-control border border-dark border-2" type="tel" id="phone_number" name="phone_number" placeholder="Phone Number" required>
+                        </div>
+                        <div class="g-recaptcha d-flex justify-content-center" data-sitekey="6Ldl3L8pAAAAACTgdoHjgVB3rlE3Q4Zfyl7-_O7y"></div>
+                        <div class="d-grid">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                            <button type="submit" class="btn btn-primary btn-block text-center">Send Verification Code</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

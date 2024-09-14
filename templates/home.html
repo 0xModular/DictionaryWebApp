@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static\bootstrap-5.3.2-dist\bootstrap-5.3.2-dist\css\bootstrap.min.css">
+    <link rel="stylesheet" href="static\bootstrap-5.3.2-dist\bootstrap-5.3.2-dist\css\index.css">
+    <script href="static\bootstrap-5.3.2-dist\bootstrap-5.3.2-dist\js\bootstrap.min.js"></script>
+    <title>Home</title>
+
+    <style>
+        /* Adjust the width of the search bar as needed */
+        .search-bar {
+            max-width: 500px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6">
+                {% if username %}
+                <div class="input-group search-bar">
+                    <input type="text" class="form-control" placeholder="Search..." aria-label="Search" aria-describedby="search-addon">
+                    <button class="btn btn-primary" type="button" id="search-addon">Search</button>
+                </div>
+                {% endif %}
+                <h1 class="msg">{{ msg }}!</h1>
+                <a href="{{ url_for('logout') }}">Logout</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
